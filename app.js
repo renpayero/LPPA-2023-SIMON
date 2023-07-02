@@ -1,6 +1,6 @@
 var botones=document.querySelectorAll(".botones")
 var start = document.getElementById("start")
-
+botones = Array.from(botones)
 
 //funcion que agrega la clase click al boton que este disparando el evento mousedown
 var pintar = function(event){
