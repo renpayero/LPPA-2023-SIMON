@@ -14,25 +14,19 @@ var despintar = function(event) {
     button.classList.remove('click');
   }
 
-var secuencia= function(){
-    var x = false
-    var len = botones.length
-    while(x != true){
-        setTimeout(function(){
-            var randomNum = Math.floor(Math.random() * len)
-            botones[randomNum].classList.add('click')
-
-            setTimeout(function () {
-                botones[randomNum].classList.remove('click');
-            }, 1000);
-        },3000)
-    }
+var len = botones.length
+function secuencia() {
+    var randomNum = Math.floor(Math.random() * len);
+    botones[randomNum].classList.add('click');
+    setTimeout(function () {
+        botones[randomNum].classList.remove('click');
+    }, 1000);
 }
 
 botones.forEach(function(i){
-    console.log("sex")
     i.addEventListener("mousedown", pintar)
     i.addEventListener("mouseup", despintar)
 })
 
-start.addEventListener("click", secuencia)
+// start.addEventListener("click", secuencia)
+var intervalo = setInterval(secuencia, 3000);
