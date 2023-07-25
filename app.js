@@ -14,9 +14,10 @@ var tiempoJugador = 30;
 
 //variables de los scripts
 var colores= ["verde", "rojo", "amarillo", "azul"];
+var reproduciendoSecuencia = false;
 var secuenciaColores = [];
 var len = botones.length; 
-var jugando = true; //inicializa en false porque cuando cargamos la pagina no estamos jugando
+var jugando = false; //inicializa en false porque cuando cargamos la pagina no estamos jugando
 
 puntuacionSpan.textContent = puntajeJugador;
 nivelSpan.textContent = nivelJugador;
@@ -35,13 +36,6 @@ var pintar = function(event){
 var despintar = function(event) {
     var button = document.getElementById(event.target.id);
     button.classList.remove('click');
-}
-
-
-var secuencia = function() {
-    var randomNum = Math.floor(Math.random() * len);
-    var newColor= colores[randomNum];
-    secuenciaColores.push(newColor);
 }
 
 var generarColoresAleatorios = function() {
@@ -93,6 +87,54 @@ var compararSecuencia = function(){
     }
 }
 
+var mostrarColorAleatorio = function (){
+    generarColoresAleatorio();
+    clearInterval(intervalo);
+  
+    reproduciendoSecuencia = true;
+    sinJugar = true;
+  
+    //Recorre el array de colores y agrega al callstack los colores a pintar en el html
+    secuenciaColores.forEach(function (color, index) {
+      setTimeout(function () {
+        if (color == "verde") {
+            document.getElementById("verde").classList.add('click');
+            setTimeout(function () {
+              document.getElementById("verde").classList.remove('click');
+            }, 600);
+        }
+  
+        if (color == "rojo") {
+            document.getElementById("rojo").classList.add('click');
+            setTimeout(function () {
+              document.getElementById("rojo").classList.remove('click');
+            }, 600);
+        }
+  
+        if (color == "amarillo") {
+            document.getElementById("amarillo").classList.add('click');
+            setTimeout(function () {
+              document.getElementById("amarillo").classList.remove('click');
+            }, 600);
+        }
+  
+        if (color == "azul") {
+            document.getElementById("azul").classList.add('click');
+            setTimeout(function () {
+              document.getElementById("azul").classList.remove('click');
+            }, 600);
+        }
+  
+        // Iniciar el contador de tiempo después de mostrar los colores
+        if (index == secuenciaColores.length - 1) {
+            iniciarContadorTiempo();
+            reproduciendoSecuencia = false; // Si es el último color de la secuencia, establecer reproduciendo secuencia en false para permitir los clics
+        }
+      }, (index + 1) * 1000);
+    });
+}
+
+//funcion que hace que empiece el juego luego de 2 segundos
 var comenzarJuego = function () {
     intervalo = setInterval(function () {
       mostrarColorAleatorio();
@@ -107,5 +149,6 @@ botones.forEach(function(i){
     i.addEventListener("click", click) //feedback del click
 })
 start.addEventListener("click", comenzarJuego)
+
 
 
