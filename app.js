@@ -88,13 +88,15 @@ var compararSecuencia = function(){
 }
 
 var mostrarColorAleatorio = function (){
-    generarColoresAleatorio();
+    // agregamos colores al arreglo de colores y limpiamos el intervalo para que no se ejecute mas el bucle del timeout
+    generarColoresAleatorios();
     clearInterval(intervalo);
   
+    // establecemos que se comenzo a jugar
     reproduciendoSecuencia = true;
     sinJugar = true;
-  
-    //Recorre el array de colores y agrega al callstack los colores a pintar en el html
+
+    // recorremos el arrayd con los colores que se van a mostrar y los pintamos
     secuenciaColores.forEach(function (color, index) {
       setTimeout(function () {
         if (color == "verde") {
@@ -124,14 +126,40 @@ var mostrarColorAleatorio = function (){
               document.getElementById("azul").classList.remove('click');
             }, 600);
         }
-  
-        // Iniciar el contador de tiempo después de mostrar los colores
+        
+        // si ya recorrimos el array secuenciaColores es decir ya pintamos todos los colores debidos, empieza el contador
         if (index == secuenciaColores.length - 1) {
-            iniciarContadorTiempo();
-            reproduciendoSecuencia = false; // Si es el último color de la secuencia, establecer reproduciendo secuencia en false para permitir los clics
+            iniciarTiempo();
+            reproduciendoSecuencia = false;
         }
       }, (index + 1) * 1000);
     });
+}
+
+var iniciarTiempo = function(){
+    intervaloTiempo = setInterval(function () {
+        if (tiempoJugador <= 0) {
+          juegoTerminado();
+          return;
+        }
+        tiempoSpan.textContent = 
+        tiempoHTML.textContent = jugador.tiempoRestante;
+        jugador.tiempoRestante--;
+      }, 1000);
+}
+
+var juegoTerminado = function () {
+    clearInterval(intervaloTiempo);
+    start.classList.remove("displayNone");
+    sinJugar = false;
+    nivelJugador = 1;
+    nivelSpan.textContent = nivelJugador;
+    tiempoSpan = 30;
+    tiempoJugador = 30;
+    puntajeJugador = 0;
+    puntuacionSpan = puntajeJugador;
+    coloresJugador = [];
+    secuenciaColores = [];
 }
 
 //funcion que hace que empiece el juego luego de 2 segundos
