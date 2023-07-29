@@ -51,6 +51,9 @@ var click = function (boton){
     if (jugando == false){
         return //ignoramos los clicks fuera de juego
     }
+    if (reproduciendoSecuencia == true){
+        return //ignoramos los clicks mientras se reproduce la secuencia
+    }
     if (boton.target.id == "verde"){
         coloresJugador.push("verde")
     }
@@ -63,28 +66,28 @@ var click = function (boton){
     if (boton.target.id == "azul"){
         coloresJugador.push("azul")
     }
+    compararSecuencia();
 }
 
 var compararSecuencia = function(){
-    if (coloresJugador.length == secuenciaColores.length){
-        //transformo los array a string para comparar luego con un if y no tener que recorrer cada elemento
-        //este metodo solo sirve cuando el array contiene valores primitivos simples
-        var coloresJugadorSTRING = JSON.stringify(coloresJugador);
-        var secuenciaColoresSTRING = JSON.stringify(secuenciaColores);
-        if(coloresJugadorSTRING == secuenciaColoresSTRING){ 
-            puntajeJugador+=1; //subo el puntaje del jugador
-            puntuacionSpan.textContent = puntajeJugador;
-            nivelJugador+=1; //subo el nivel del jugador
-            nivelSpan.textContent = nivelJugador;
-            coloresJugador = [] //reseteamos el registro de colores para el nuevo nivel
-            //PENDIENTE: AGREGAR MODAL DE PASAR AL SIGUIENTE NIVEL
-            return true; //devuelve true si el jugador paso el nivel
+    for (var i=0; i< coloresJugador.length; i++){
+        if (coloresJugador[coloresJugador.length-1] == secuenciaColores[coloresJugador.length-1]){
+            puntajeJugador+= 1;
+            puntuacionSpan.textContent=puntajeJugador;
+            if (coloresJugador.length == secuenciaColores.length){
+                nivelJugador+=1; //subo el nivel del jugador
+                nivelSpan.textContent = nivelJugador;
+                coloresJugador = [] //reseteamos el registro de colores para el nuevo nivel
+                tiempoSpan.textContent=tiempoJugador;
+                mostrarColorAleatorio();
+                clearInterval(intervalTiempo);
+                tiempoJugador= 30; //ESTO VA DESPUES PORQUE SINO SE EJECTURA PERDISTE COMO BUG
+                tiempoSpan.textContent= "";
+            }
+            return
         }
     }
-    else {
-        //PENDIENTE: MOSTRAR MODAL DE PERDISTE
-        false //devuelve false si el jugador PIERDE
-    }
+    juegoTerminado();
 }
 
 var mostrarColorAleatorio = function (){
@@ -92,12 +95,12 @@ var mostrarColorAleatorio = function (){
     generarColoresAleatorios();
     clearInterval(intervalo);
   
-    // establecemos que se comenzo a jugar
+    // establecemos que se esta jugando y se esta reproduciendo la secuencia
     reproduciendoSecuencia = true;
-    sinJugar = true;
+    jugando = true;
 
     // recorremos el arrayd con los colores que se van a mostrar y los pintamos
-    secuenciaColores.forEach(function (color, index) {
+    secuenciaColores.forEach(function (color, i) {
       setTimeout(function () {
         if (color == "verde") {
             document.getElementById("verde").classList.add('click');
@@ -128,36 +131,37 @@ var mostrarColorAleatorio = function (){
         }
         
         // si ya recorrimos el array secuenciaColores es decir ya pintamos todos los colores debidos, empieza el contador
-        if (index == secuenciaColores.length - 1) {
+        if (i == secuenciaColores.length - 1) {
             iniciarTiempo();
             reproduciendoSecuencia = false;
         }
-      }, (index + 1) * 1000);
+      }, (i + 1) * 1000);
     });
 }
 
 var iniciarTiempo = function(){
-    intervaloTiempo = setInterval(function () {
+    intervalTiempo = setInterval(function () {
         if (tiempoJugador <= 0) {
-          juegoTerminado();
-          return;
+            console.log("PERDI POR ACA")
+            juegoTerminado();
+            return;
         }
-        tiempoSpan.textContent = 
-        tiempoHTML.textContent = jugador.tiempoRestante;
-        jugador.tiempoRestante--;
+        tiempoSpan.textContent = tiempoJugador;
+        tiempoJugador--;
       }, 1000);
 }
 
 var juegoTerminado = function () {
-    clearInterval(intervaloTiempo);
+    clearInterval(intervalTiempo);
     start.classList.remove("displayNone");
     sinJugar = false;
+    reproduciendoSecuencia= false;
     nivelJugador = 1;
-    nivelSpan.textContent = nivelJugador;
-    tiempoSpan = 30;
     tiempoJugador = 30;
     puntajeJugador = 0;
-    puntuacionSpan = puntajeJugador;
+    nivelSpan.textContent = nivelJugador;
+    tiempoSpan.textContent = 30;
+    puntuacionSpan.textContent = puntajeJugador;
     coloresJugador = [];
     secuenciaColores = [];
 }
