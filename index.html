@@ -12,7 +12,6 @@
         <h1>Simon Dice</h1>
         <h2 class="puntuacion">Puntuación: <span id="puntuacionSpan"></span></h2>
         <h2 class="nivel">Nivel: <span id="nivelSpan"></span></h2>
-        <h2 class="tiempo">Tiempo: <span id="tiempoSpan"></span></h2>
     </header>
     <main>
         <div class="container">
@@ -24,9 +23,24 @@
                 <div class="botones " id="amarillo" name="amarillo"></div>
                 <div class="botones" id="azul" name="azul"></div>
             </div>
+            <strong><span id="tiempoSpan"></span></strong>
             <button id="start"> START </button>
         </div>
     </main>
+    <div id="modalNombreJugador">
+        <label for="nombreJugador" id="labelNombre">Ingrese su nombre de jugador</label>
+        <input type="text" name="nombreJugador">
+        <span>*Debe contener almenos 3 caracteres</span>
+        <input type="submit" value="Guardar">
+    </div>
+    <div id="modalJuegoTerminado">
+        <label for="continuar" id="labelJuegoTerminado">Has Perdido!</label>
+        <input type="button" value="continuar" name="continuar" id="continuar">
+    </div>
+    <div id="modalSiguienteNivel">
+        <p id="pSiguienteNivel">Felicidades! Pasaste de nivel!</p>
+    </div>
+    <div class="fondoDesenfocado displayNone"></div>
     <script src="app.js"></script>
 </body>
 </html>

@@ -166,11 +166,11 @@ var juegoTerminado = function () {
     secuenciaColores = [];
 }
 
-//funcion que hace que empiece el juego luego de 2 segundos
+//funcion que hace que empiece el juego luego de 1 segundos
 var comenzarJuego = function () {
     intervalo = setInterval(function () {
       mostrarColorAleatorio();
-    }, 2000);
+    }, 1000);
     start.classList.add("displayNone");
 }
 
