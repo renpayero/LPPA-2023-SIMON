@@ -21,7 +21,6 @@ var jugando = false; //inicializa en false porque cuando cargamos la pagina no e
 
 puntuacionSpan.textContent = puntajeJugador;
 nivelSpan.textContent = nivelJugador;
-tiempoSpan.textContent = tiempoJugador;
 
 
 
