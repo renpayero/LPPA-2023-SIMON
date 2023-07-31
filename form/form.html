@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <div class="container">
+    <h2 id="titulo-nombre">Hola!</h2>
+    <form id="formulario">
+      <div class="form-group" id="grupo-nombre">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <p id="nombre-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="nombre-incorrecto" class="validacion-incorrecta"><strong>¡El campo debe contener almenos 2 palabras (nombre/s y apellido)!</strong></p>
+      </div>
+
+      <div class="form-group" id="grupo-email">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p id="email-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="email-incorrecto" class="validacion-incorrecta"><strong>¡El campo no cumple con formato de email!</strong></p>
+      </div>
+
+      <div class="form-group" id="grupo-mensaje">
+        <label for="mensaje">Mensaje: </label>
+        <textarea name="mensaje" id="mensaje" cols="63" rows="17"></textarea>
+        <p id="mensaje-incorrecto" class="validacion-incorrecta"><strong>¡El campo debe contener almenos 5 caracteres!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-sumbit">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+  <script src="form.js"></script>
+</body>
+</html>

@@ -104,6 +104,9 @@ var click = function (boton){
     compararSecuencia();
 }
 var compararSecuencia = function(){
+    if (jugando == false){
+        return
+    }
     for (var i=0; i< coloresJugador.length; i++){
         if (coloresJugador[coloresJugador.length-1] == secuenciaColores[coloresJugador.length-1]){
             puntajeJugador+= 1;
@@ -188,7 +191,6 @@ var mostrarColorAleatorio = function (){
 var iniciarTiempo = function(){
     intervalTiempo = setInterval(function () {
         if (tiempoJugador <= 0) {
-            console.log("PERDI POR ACA")
             juegoTerminado();
             return;
         }
@@ -208,7 +210,7 @@ var juegoTerminado = function () {
     })
     clearInterval(intervalTiempo);
     start.classList.remove("displayNone");
-    sinJugar = false;
+    jugando = false;
     reproduciendoSecuencia= false;
     nivelJugador = 1;
     tiempoJugador = 30;
@@ -227,6 +229,7 @@ var modalNombreJugadorFunction = function(){
 
 var guardarNombreJugador = function(){
     event.preventDefault();
+    sonidoClickPlay();
     if (nombreJugadorInput.value.length >= 3){
         nombreJugador = nombreJugadorInput.value;
         modalNombreJugador.classList.add("displayNone");
