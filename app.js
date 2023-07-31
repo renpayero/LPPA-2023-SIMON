@@ -6,6 +6,12 @@ var puntuacionSpan = document.getElementById("puntuacionSpan");
 var nivelSpan = document.getElementById("nivelSpan");
 var tiempoSpan = document.getElementById("tiempoSpan");
 
+//selectores de modales
+var modalNombreJugador = document.getElementById("modalNombreJugador");
+var modalJuegoTerminado = document.getElementById("modalJuegoTerminado");
+var modalSiguienteNivel = document.getElementById("modalSiguienteNivel");
+var displayNoneDiv = document.getElementById("displayNoneDiv");
+
 //variables de jugador
 var coloresJugador = [];
 var nivelJugador = 1;
@@ -19,11 +25,37 @@ var secuenciaColores = [];
 var len = botones.length; 
 var jugando = false; //inicializa en false porque cuando cargamos la pagina no estamos jugando
 
+//sonidos
+var sonidoClick = new Audio("./SONIDOS/PIP_SOUND.wav");
+var juegoTerminadoSound = new Audio("./SONIDOS/GAME_OVER_SOUND.wav");
+var siguienteNivel = new Audio("./SONIDOS/LEVEL_UP_SOUND.wav");
+var popUp = new Audio("./SONIDOS/POPUP_SOUND.wav");
+var mostrarColor = new Audio("./SONIDOS/MOSTRAR_COLOR.wav");
+
+
 puntuacionSpan.textContent = puntajeJugador;
 nivelSpan.textContent = nivelJugador;
 
 
+//funciones de sonidos
+var sonidoClickPlay = function(){
+    sonidoClick.play();
+}
+var juegoTerminadoSoundPlay = function(){
+    juegoTerminadoSound.play();
+}
 
+var siguienteNivelPlay = function(){
+    siguienteNivel.play();
+}
+
+var popUpPlay = function(){
+    popUp.play();
+}
+
+var mostrarColorPlay = function(){
+    mostrarColor.play();
+}
 
 //funcion que agrega la clase click al boton que este disparando el evento mousedown
 var pintar = function(event){
@@ -38,7 +70,7 @@ var despintar = function(event) {
 }
 
 var generarColoresAleatorios = function() {
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < 1; i++) {
         var randomNum = Math.floor(Math.random() * len);
         var newColor= colores[randomNum];
         secuenciaColores.push(newColor);
@@ -67,7 +99,6 @@ var click = function (boton){
     }
     compararSecuencia();
 }
-
 var compararSecuencia = function(){
     for (var i=0; i< coloresJugador.length; i++){
         if (coloresJugador[coloresJugador.length-1] == secuenciaColores[coloresJugador.length-1]){
@@ -75,6 +106,14 @@ var compararSecuencia = function(){
             puntuacionSpan.textContent=puntajeJugador;
             if (coloresJugador.length == secuenciaColores.length){
                 nivelJugador+=1; //subo el nivel del jugador
+                displayNoneDiv.classList.remove("displayNone");
+                modalSiguienteNivel.classList.remove("displayNone");
+                siguienteNivelPlay();
+                setTimeout(function () {
+                    displayNoneDiv.classList.add("displayNone");
+                    modalSiguienteNivel.classList.add("displayNone")
+                    sonidoClick.pause();
+                }, 600);
                 nivelSpan.textContent = nivelJugador;
                 coloresJugador = [] //reseteamos el registro de colores para el nuevo nivel
                 tiempoSpan.textContent=tiempoJugador;
@@ -103,6 +142,7 @@ var mostrarColorAleatorio = function (){
       setTimeout(function () {
         if (color == "verde") {
             document.getElementById("verde").classList.add('click');
+            mostrarColorPlay();
             setTimeout(function () {
               document.getElementById("verde").classList.remove('click');
             }, 600);
@@ -110,6 +150,7 @@ var mostrarColorAleatorio = function (){
   
         if (color == "rojo") {
             document.getElementById("rojo").classList.add('click');
+            mostrarColorPlay();
             setTimeout(function () {
               document.getElementById("rojo").classList.remove('click');
             }, 600);
@@ -117,6 +158,7 @@ var mostrarColorAleatorio = function (){
   
         if (color == "amarillo") {
             document.getElementById("amarillo").classList.add('click');
+            mostrarColorPlay();
             setTimeout(function () {
               document.getElementById("amarillo").classList.remove('click');
             }, 600);
@@ -124,6 +166,7 @@ var mostrarColorAleatorio = function (){
   
         if (color == "azul") {
             document.getElementById("azul").classList.add('click');
+            mostrarColorPlay();
             setTimeout(function () {
               document.getElementById("azul").classList.remove('click');
             }, 600);
@@ -151,6 +194,14 @@ var iniciarTiempo = function(){
 }
 
 var juegoTerminado = function () {
+    modalJuegoTerminado.classList.remove("displayNone");
+    displayNoneDiv.classList.remove("displayNone");
+    juegoTerminadoSoundPlay();
+    document.getElementById("continuar").addEventListener("click", function(){
+        displayNoneDiv.classList.add("displayNone");
+        modalJuegoTerminado.classList.add("displayNone");
+        sonidoClickPlay();
+    })
     clearInterval(intervalTiempo);
     start.classList.remove("displayNone");
     sinJugar = false;
@@ -178,8 +229,10 @@ botones.forEach(function(i){
     i.addEventListener("mousedown", pintar)
     i.addEventListener("mouseup", despintar)
     i.addEventListener("click", click) //feedback del click
+    i.addEventListener("click", sonidoClickPlay);
 })
 start.addEventListener("click", comenzarJuego)
+start.addEventListener("click", sonidoClickPlay)
 
 
 

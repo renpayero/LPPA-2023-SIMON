@@ -16,31 +16,31 @@
     <main>
         <div class="container">
             <div>
-                <div class="botones" id="verde" name="verde"></div>
-                <div class="botones" id="rojo" name="rojo"></div>
+                <div class="botones" id="verde"></div>
+                <div class="botones" id="rojo"></div>
             </div>
             <div>
-                <div class="botones " id="amarillo" name="amarillo"></div>
-                <div class="botones" id="azul" name="azul"></div>
+                <div class="botones " id="amarillo"></div>
+                <div class="botones" id="azul"></div>
             </div>
             <strong><span id="tiempoSpan"></span></strong>
             <button id="start"> START </button>
         </div>
     </main>
-    <div id="modalNombreJugador">
+    <div class="modalNombreJugador displayNone" id="modalNombreJugador">
         <label for="nombreJugador" id="labelNombre">Ingrese su nombre de jugador</label>
-        <input type="text" name="nombreJugador">
+        <input type="text" name="nombreJugador" id="nombreJugador">
         <span>*Debe contener almenos 3 caracteres</span>
         <input type="submit" value="Guardar">
     </div>
-    <div id="modalJuegoTerminado">
+    <div class="modalJuegoTerminado displayNone" id="modalJuegoTerminado">
         <label for="continuar" id="labelJuegoTerminado">Has Perdido!</label>
         <input type="button" value="continuar" name="continuar" id="continuar">
     </div>
-    <div id="modalSiguienteNivel">
+    <div class="modalSiguienteNivel displayNone" id="modalSiguienteNivel">
         <p id="pSiguienteNivel">Felicidades! Pasaste de nivel!</p>
     </div>
-    <div class="fondoDesenfocado displayNone"></div>
+    <div class="fondoDesenfocado displayNone" id="displayNoneDiv"></div>
     <script src="app.js"></script>
 </body>
 </html>

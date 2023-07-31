@@ -28,9 +28,6 @@ h2 span {
     color: white;
     z-index: 1;
 }
-.displayNone{
-    display: None;
-}
 body{
     background: linear-gradient(black, blue);
     width: 100vw;
@@ -93,8 +90,8 @@ button{
 
 
 /* MODAL JUGADOR */
-#modalNombreJugador{
-    display: none;
+.modalNombreJugador{
+    display: flex;
     justify-content: space-around;
     align-items:center;
     flex-direction: column;
@@ -117,8 +114,8 @@ button{
 }  
 
 /* MODAL JUEGO TERMINADO */
-#modalJuegoTerminado{
-    display: None;
+.modalJuegoTerminado{
+    display: flex;
     justify-content: space-around;
     align-items:center;
     flex-direction: column;
@@ -146,8 +143,8 @@ button{
 }
 
 /* MODAL SIGUIENTE NIVEL */
-#modalSiguienteNivel{
-    display: none;
+.modalSiguienteNivel{
+    display: flex;
     justify-content: space-around;
     align-items:center;
     position: fixed;
@@ -178,4 +175,12 @@ button{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 5; 
+}
+
+/* DISPLAY NONE Y DISPLAY FLEX */
+.displayNone{
+    display: None;
+}
+.displayFlex{
+    display: flex;
 }
