@@ -163,7 +163,8 @@ button{
 
 #pSiguienteNivel{
     font-size: 2em;
-    color: rgb(0, 255, 76);
+    font-weight: bold;
+    color: rgb(0, 255, 34);
 }
 
 /* FONDO DESENFOCADO */
@@ -177,10 +178,14 @@ button{
     z-index: 5; 
 }
 
-/* DISPLAY NONE Y DISPLAY FLEX */
+/* DISPLAY NONE Y DISPLAY FLEX MODIFICADORES */
 .displayNone{
     display: None;
 }
 .displayFlex{
     display: flex;
+}
+.resaltarEnRojo{
+    font-weight: bold;
+    color: #ff1e00;
 }

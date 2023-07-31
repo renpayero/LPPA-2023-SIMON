@@ -11,8 +11,12 @@ var modalNombreJugador = document.getElementById("modalNombreJugador");
 var modalJuegoTerminado = document.getElementById("modalJuegoTerminado");
 var modalSiguienteNivel = document.getElementById("modalSiguienteNivel");
 var displayNoneDiv = document.getElementById("displayNoneDiv");
+var nombreJugadorInput = document.getElementById("nombreJugadorInput");
+var sumbitNombreJugador = document.getElementById("sumbitNombreJugador");
+var spanNombreJugador = document.getElementById("spanNombreJugador");
 
 //variables de jugador
+var nombreJugador = ""
 var coloresJugador = [];
 var nivelJugador = 1;
 var puntajeJugador = 0;
@@ -216,6 +220,27 @@ var juegoTerminado = function () {
     secuenciaColores = [];
 }
 
+var modalNombreJugadorFunction = function(){
+    modalNombreJugador.classList.remove("displayNone");
+    displayNoneDiv.classList.remove("displayNone")
+}
+
+var guardarNombreJugador = function(){
+    event.preventDefault();
+    if (nombreJugadorInput.value.length >= 3){
+        nombreJugador = nombreJugadorInput.value;
+        modalNombreJugador.classList.add("displayNone");
+        displayNoneDiv.classList.add("displayNone");
+    }
+    else {
+        spanNombreJugador.classList.add("resaltarEnRojo");
+        setTimeout(function(){
+            spanNombreJugador.classList.remove("resaltarEnRojo");
+        },1000)
+    }
+
+}
+
 //funcion que hace que empiece el juego luego de 1 segundos
 var comenzarJuego = function () {
     intervalo = setInterval(function () {
@@ -226,13 +251,16 @@ var comenzarJuego = function () {
 
 //MANEJO DE EVENTOS
 botones.forEach(function(i){
-    i.addEventListener("mousedown", pintar)
-    i.addEventListener("mouseup", despintar)
-    i.addEventListener("click", click) //feedback del click
+    i.addEventListener("mousedown", pintar);
+    i.addEventListener("mouseup", despintar);
+    i.addEventListener("click", click); //feedback del click
     i.addEventListener("click", sonidoClickPlay);
 })
-start.addEventListener("click", comenzarJuego)
-start.addEventListener("click", sonidoClickPlay)
+start.addEventListener("click", comenzarJuego);
+start.addEventListener("click", sonidoClickPlay);
+sumbitNombreJugador.addEventListener("click", guardarNombreJugador);
+modalNombreJugadorFunction();
+  
 
 
 
