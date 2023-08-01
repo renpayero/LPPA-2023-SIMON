@@ -1,6 +1,6 @@
 JUEGO DE SIMON DICE PARA LA MATERIA DESAROLLO DE ARQUITECTURAS WEB
 
------------------tareas pendientes----------------
+-----------------tareas pendientes-----------------------------------------------
 1- HACER FULL RESPONSIVE
 
 2-  abrir la herramienta de envío de emails
@@ -13,7 +13,7 @@ puntajes y fechas. En este ranking debe estar ordenado por puntaje.
 
 5- Agregar la opción de ordenar el ranking por fecha o puntaje
 
-----------------EXTRA--------------------- 
+----------------EXTRA------------------------------------------------------------ 
 
 a- mascota del juego que reproduzca los modales como si estuviera hablando
 
