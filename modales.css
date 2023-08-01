@@ -10,7 +10,7 @@
     height: 10vw;
     padding: 2vw;
     color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
+    background: linear-gradient(#088be3, rgba(255, 255, 255, 0.699));
     border: 1px solid white;
     top: 50%;
     left: 50%;
@@ -46,7 +46,7 @@
     height: 10vw;
     padding: 2vw;
     color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
+    background: linear-gradient(#088be3, rgba(255, 255, 255, 0.699));
     border: 1px solid white;
     top: 50%;
     left: 50%;
@@ -81,7 +81,7 @@
     height: 10vw;
     padding: 2vw;
     color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
+    background: linear-gradient(#088be3, rgba(255, 255, 255, 0.699));
     border: 1px solid white;
     top: 50%;
     left: 50%;
@@ -93,5 +93,6 @@
 #pSiguienteNivel{
     font-size: 2vw;
     font-weight: bold;
-    color: rgb(0, 255, 34);
+    color: white;
+    -webkit-text-stroke: 1px black;
 }
