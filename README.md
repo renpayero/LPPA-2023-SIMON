@@ -22,3 +22,5 @@ a- mascota del juego que reproduzca los modales como si estuviera hablando
 b- fondo con movimiento
 
 c- dificultad HARDCORE
+
+d- mejor puntaje personal
