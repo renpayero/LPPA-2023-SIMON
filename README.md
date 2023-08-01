@@ -20,3 +20,5 @@ puntajes y fechas. En este ranking debe estar ordenado por puntaje.
 a- mascota del juego que reproduzca los modales como si estuviera hablando
 
 b- fondo con movimiento
+
+c- dificultad HARDCORE
