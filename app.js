@@ -5,6 +5,7 @@ var start = document.getElementById("start");
 var puntuacionSpan = document.getElementById("puntuacionSpan");
 var nivelSpan = document.getElementById("nivelSpan");
 var tiempoSpan = document.getElementById("tiempoSpan");
+var contactanos = document.getElementById("contactanos");
 
 //selectores de modales
 var modalNombreJugador = document.getElementById("modalNombreJugador");
@@ -241,7 +242,6 @@ var guardarNombreJugador = function(){
             spanNombreJugador.classList.remove("resaltarEnRojo");
         },1000)
     }
-
 }
 
 //funcion que hace que empiece el juego luego de 1 segundos
@@ -259,6 +259,7 @@ botones.forEach(function(i){
     i.addEventListener("click", click); //feedback del click
     i.addEventListener("click", sonidoClickPlay);
 })
+
 start.addEventListener("click", comenzarJuego);
 start.addEventListener("click", sonidoClickPlay);
 sumbitNombreJugador.addEventListener("click", guardarNombreJugador);

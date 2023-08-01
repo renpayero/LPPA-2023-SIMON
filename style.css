@@ -30,9 +30,9 @@ h2 span {
 }
 body{
     background: linear-gradient(black, blue);
-    width: 100vw;
     height: 100vh;
-    
+    margin: 0;
+    padding: 0;
 }
 .container {
     background: #090661;
@@ -88,6 +88,13 @@ button{
     background-color: #57A773;
 }
 
+#contactanos {
+    display: flex;
+    position: absolute;
+    width: 13em;
+    height: 6em;
+    z-index: 2; /* Asegura que la imagen esté por encima de todo */
+  }
 
 /* MODAL JUGADOR */
 .modalNombreJugador{
@@ -177,6 +184,7 @@ button{
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 5; 
 }
+
 
 /* DISPLAY NONE Y DISPLAY FLEX MODIFICADORES */
 .displayNone{
