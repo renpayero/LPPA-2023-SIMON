@@ -7,29 +7,35 @@ h1{
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-size: 4em;
+    font-size: 4vw;
     color: white;
 }
 h2{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1vw;
     color: white;
 }
 h2 span {
-    padding-left: 1em;
+    padding-left: 1vw;
+}
+.btn{
+    display: flex;
+    justify-content: center;
 }
 #tiempoSpan{
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 3em;
+    font-size: 3vw;
     transform: translate(-50%, -50%);
     color: white;
     z-index: 1;
 }
 body{
     background: linear-gradient(black, blue);
+    background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -42,9 +48,9 @@ body{
     position: relative;
     border-radius: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    width: 39em;
-    height: 39em;
-    margin-top: 1em;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 1vw;
     margin-left: auto;
     margin-bottom: auto;
     margin-right: auto;
@@ -53,27 +59,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15em;
-    height: 15em;
-    margin: 1em;
+    width: 11vw;
+    height: 11vw;
+    margin: 1vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 100%;
     cursor: pointer;   
 }
 button{
     position: absolute; 
-    width: 7em;
-    height: 7em;
+    width: 6vw;
+    height: 6vw;
+    font-size: 1vw;
     border-radius: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
     z-index: 2;  
 }
-/* EFECTO DE RESALTADO DE LOS BOTONES  */
-.click{
-    filter: brightness(200%);
-    box-shadow: 0 0 0 3px white;
-}
-
 /* COLORES DE LOS BOTONES */
 #rojo{
     background-color: #f05945;
@@ -86,114 +87,4 @@ button{
 }
 #verde{
     background-color: #57A773;
-}
-
-#contactanos {
-    display: flex;
-    position: absolute;
-    width: 13em;
-    height: 6em;
-    z-index: 2; /* Asegura que la imagen esté por encima de todo */
-  }
-
-/* MODAL JUGADOR */
-.modalNombreJugador{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    flex-direction: column;
-    position: fixed;
-    width: 30em;
-    height: 10em;
-    padding: 2em;
-    color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
-    border: 2px solid white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 1em;
-    z-index: 10;
-}
-#labelNombre {
-    margin-bottom: 1em;
-    font-size: 2em;
-}  
-
-/* MODAL JUEGO TERMINADO */
-.modalJuegoTerminado{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    flex-direction: column;
-    position: fixed;
-    width: 30em;
-    height: 10em;
-    padding: 2em;
-    color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
-    border: 2px solid white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 1em;
-    z-index: 10;
-}
-
-#labelJuegoTerminado{
-    margin-bottom: 10px;
-    font-size: 3em;
-}
-#continuar{
-    width: 10em;
-    height: 3em;
-}
-
-/* MODAL SIGUIENTE NIVEL */
-.modalSiguienteNivel{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    position: fixed;
-    width: 30em;
-    height: 10em;
-    padding: 2em;
-    color: white;
-    background: linear-gradient(rgb(0, 0, 0), blue);
-    border: 2px solid white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 1em;
-    z-index: 10;
-}
-
-#pSiguienteNivel{
-    font-size: 2em;
-    font-weight: bold;
-    color: rgb(0, 255, 34);
-}
-
-/* FONDO DESENFOCADO */
-.fondoDesenfocado {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5; 
-}
-
-
-/* DISPLAY NONE Y DISPLAY FLEX MODIFICADORES */
-.displayNone{
-    display: None;
-}
-.displayFlex{
-    display: flex;
-}
-.resaltarEnRojo{
-    font-weight: bold;
-    color: #ff1e00;
 }

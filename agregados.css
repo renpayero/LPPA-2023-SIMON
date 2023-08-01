@@ -1,0 +1,29 @@
+/* FONDO DESENFOCADO */
+.fondoDesenfocado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5; 
+}
+
+
+/* DISPLAY NONE Y DISPLAY FLEX MODIFICADORES */
+.displayNone{
+    display: None;
+}
+.displayFlex{
+    display: flex;
+}
+.resaltarEnRojo{
+    font-weight: bold;
+    color: #ff1e00;
+}
+
+/* EFECTO DE RESALTADO DE LOS BOTONES  */
+.click{
+    filter: brightness(200%);
+    box-shadow: 0 0 0 3px white;
+}

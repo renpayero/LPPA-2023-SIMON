@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="modales.css">
+    <link rel="stylesheet" href="agregados.css">
     <title>Simon Dice</title>
 </head>
 <body>
-    <a href="./form/form.html" target="_blank"><img src="Contact-Us-PNG-Download-Free-Image.png" alt="contactanos" id="contactanos"></a>
     <header>
+        <a href="./form/form.html" target="_blank" class="btn">Contactanos</a>
         <h1>Simon Dice</h1>
         <h2 class="puntuacion">Puntuación: <span id="puntuacionSpan"></span></h2>
         <h2 class="nivel">Nivel: <span id="nivelSpan"></span></h2>
     </header>
-    <main>
-        <div class="container">
+    <main class="container">
             <div>
                 <div class="botones" id="verde"></div>
                 <div class="botones" id="rojo"></div>
@@ -26,22 +28,23 @@
             </div>
             <strong><span id="tiempoSpan"></span></strong>
             <button id="start"> JUGAR </button>
-        </div>
+            <div class="modalNombreJugador displayNone" id="modalNombreJugador">
+                <label for="nombreJugadorInput" id="labelNombre">Ingrese su nombre de jugador</label>
+                <input type="text" name="nombreJugador" id="nombreJugadorInput">
+                <span id="spanNombreJugador">*Debe contener almenos 3 caracteres</span>
+                <input type="submit" value="Guardar" id="sumbitNombreJugador">
+            </div>
+            <div class="modalJuegoTerminado displayNone" id="modalJuegoTerminado">
+                <label for="continuar" id="labelJuegoTerminado">Has Perdido!</label>
+                <span>Puntuacion final: <span id="spanPuntuacionFinal"></span></span>
+                <span>Nivel: <span id="spanNivelFinal"></span></span>
+                <input type="button" value="continuar" name="continuar" id="continuar">
+            </div>
+            <div class="modalSiguienteNivel displayNone" id="modalSiguienteNivel">
+                <p id="pSiguienteNivel">Felicidades! Pasaste de nivel!</p>
+            </div>
+            <div class="fondoDesenfocado displayNone" id="displayNoneDiv"></div>
     </main>
-    <div class="modalNombreJugador displayNone" id="modalNombreJugador">
-        <label for="nombreJugadorInput" id="labelNombre">Ingrese su nombre de jugador</label>
-        <input type="text" name="nombreJugador" id="nombreJugadorInput">
-        <span id="spanNombreJugador">*Debe contener almenos 3 caracteres</span>
-        <input type="submit" value="Guardar" id="sumbitNombreJugador">
-    </div>
-    <div class="modalJuegoTerminado displayNone" id="modalJuegoTerminado">
-        <label for="continuar" id="labelJuegoTerminado">Has Perdido!</label>
-        <input type="button" value="continuar" name="continuar" id="continuar">
-    </div>
-    <div class="modalSiguienteNivel displayNone" id="modalSiguienteNivel">
-        <p id="pSiguienteNivel">Felicidades! Pasaste de nivel!</p>
-    </div>
-    <div class="fondoDesenfocado displayNone" id="displayNoneDiv"></div>
     <script src="app.js"></script>
 </body>
 </html>

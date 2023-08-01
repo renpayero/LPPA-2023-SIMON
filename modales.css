@@ -1,0 +1,97 @@
+
+/* MODAL JUGADOR */
+.modalNombreJugador{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+    width: 30vw;
+    height: 10vw;
+    padding: 2vw;
+    color: white;
+    background: linear-gradient(rgb(0, 0, 0), blue);
+    border: 1px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vw;
+    z-index: 10;
+}
+#labelNombre {
+    margin-bottom: 1vw;
+    font-size: 2vw;
+}  
+#nombreJugadorInput{
+    width: 18vw;
+    font-size: 1vw;
+}
+#spanNombreJugador{
+    font-size: 1vw;
+    padding-bottom: 1vw;
+}
+#sumbitNombreJugador{
+    width: 7vw;
+    font-size: 1vw;
+}
+
+/* MODAL JUEGO TERMINADO */
+.modalJuegoTerminado{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+    width: 30vw;
+    height: 10vw;
+    padding: 2vw;
+    color: white;
+    background: linear-gradient(rgb(0, 0, 0), blue);
+    border: 1px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vw;
+    z-index: 10;
+}
+#labelJuegoTerminado{
+    margin-bottom: 1vw;
+    font-size: 3vw;
+}
+#continuar{
+    margin-top: 1vw;
+    width: 10vw;
+    height: 3vw;
+    font-size: 1vw;
+}
+.modalJuegoTerminado span{
+    font-size: 1vw;
+}
+.modalJuegoTerminado span span{
+    font-size: 1vw;
+}
+
+/* MODAL SIGUIENTE NIVEL */
+.modalSiguienteNivel{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: fixed;
+    width: 30vw;
+    height: 10vw;
+    padding: 2vw;
+    color: white;
+    background: linear-gradient(rgb(0, 0, 0), blue);
+    border: 1px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vw;
+    z-index: 10;
+}
+
+#pSiguienteNivel{
+    font-size: 2vw;
+    font-weight: bold;
+    color: rgb(0, 255, 34);
+}

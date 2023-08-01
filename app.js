@@ -15,6 +15,8 @@ var displayNoneDiv = document.getElementById("displayNoneDiv");
 var nombreJugadorInput = document.getElementById("nombreJugadorInput");
 var sumbitNombreJugador = document.getElementById("sumbitNombreJugador");
 var spanNombreJugador = document.getElementById("spanNombreJugador");
+var spanPuntuacionFinal = document.getElementById("spanPuntuacionFinal");
+var spanNivelFinal = document.getElementById("spanNivelFinal");
 
 //variables de jugador
 var nombreJugador = ""
@@ -22,12 +24,15 @@ var coloresJugador = [];
 var nivelJugador = 1;
 var puntajeJugador = 0;
 var tiempoJugador = 30;
+var tiempoPorNivel = [];
+var puntajeFinalJugador = 0;
 
 //variables de los scripts
 var colores= ["verde", "rojo", "amarillo", "azul"];
 var reproduciendoSecuencia = false;
 var secuenciaColores = [];
 var len = botones.length; 
+var tiempoUsado=0
 var jugando = false; //inicializa en false porque cuando cargamos la pagina no estamos jugando
 
 //sonidos
@@ -120,8 +125,8 @@ var compararSecuencia = function(){
                 setTimeout(function () {
                     displayNoneDiv.classList.add("displayNone");
                     modalSiguienteNivel.classList.add("displayNone")
-                    sonidoClick.pause();
                 }, 600);
+                tiempoPorNivel.push(tiempoJugador);
                 nivelSpan.textContent = nivelJugador;
                 coloresJugador = [] //reseteamos el registro de colores para el nuevo nivel
                 tiempoSpan.textContent=tiempoJugador;
@@ -200,7 +205,20 @@ var iniciarTiempo = function(){
       }, 1000);
 }
 
+var calcularPuntajeFinal = function(){
+    tiempoPorNivel.forEach(function(valor, i){
+        // puntajeFinalJugador += valor / puntajeJugador;
+        tiempoUsado += 30-tiempoPorNivel[i];
+    });
+    puntajeFinalJugador = puntajeJugador - tiempoUsado;
+    console.log(tiempoUsado);
+    console.log(puntajeJugador);
+}
+
 var juegoTerminado = function () {
+    calcularPuntajeFinal();
+    spanNivelFinal.textContent =  nivelJugador;
+    spanPuntuacionFinal.textContent =puntajeFinalJugador;
     modalJuegoTerminado.classList.remove("displayNone");
     displayNoneDiv.classList.remove("displayNone");
     juegoTerminadoSoundPlay();
@@ -221,6 +239,9 @@ var juegoTerminado = function () {
     puntuacionSpan.textContent = puntajeJugador;
     coloresJugador = [];
     secuenciaColores = [];
+    tiempoUsado = 0;
+    puntajeFinalJugador = 0;
+    tiempoPorNivel = [];
 }
 
 var modalNombreJugadorFunction = function(){
