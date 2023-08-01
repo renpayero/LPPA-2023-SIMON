@@ -1,6 +1,8 @@
 JUEGO DE SIMON DICE PARA LA MATERIA DESAROLLO DE ARQUITECTURAS WEB
 
 -----------------tareas pendientes-----------------------------------------------
+
+
 1- HACER FULL RESPONSIVE
 
 2-  abrir la herramienta de envío de emails
