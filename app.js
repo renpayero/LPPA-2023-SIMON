@@ -242,6 +242,7 @@ var juegoTerminado = function () {
     tiempoUsado = 0;
     puntajeFinalJugador = 0;
     tiempoPorNivel = [];
+    tiempoSpan.textContent= "";
 }
 
 var modalNombreJugadorFunction = function(){
