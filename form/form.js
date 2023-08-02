@@ -52,7 +52,9 @@ formulario.addEventListener("submit", function(evento) {
   
 	var nombreCompleto = document.getElementById("nombre").value;
 	var email = document.getElementById("email").value;
+	var asunto = document.getElementById("asunto").value;
 	var mensaje = document.getElementById("mensaje").value;
+	formulario.action = `mailto:renzopayero@hotmail.com?mail=joaksd@ojasdnl.com&subject=${asunto}&body=${mensaje}`;
 
 	nombreCompletoRegex = /^(?=.*\s).{6,}$/;
 	emailRegex = /^\S+@\S+\.\S+$/;
@@ -79,6 +81,5 @@ formulario.addEventListener("submit", function(evento) {
 	  "\nEmail: " + email +
 	  "\nMensaje: " + mensaje
   
-	alert(mensajeAlert);
 	formulario.submit();
   })

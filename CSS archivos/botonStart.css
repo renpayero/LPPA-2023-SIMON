@@ -9,7 +9,7 @@
   background: #1e1e1e;
   color: rgb(255, 255, 255);
   box-shadow: 0 0 10px #363636, inset 0 0 10px #363636;
-  z-index: 10;
+  z-index: 5;
 }
 
 #start:hover {

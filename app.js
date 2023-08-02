@@ -229,6 +229,7 @@ var juegoTerminado = function () {
     })
     clearInterval(intervalTiempo);
     start.classList.remove("displayNone");
+    guardarEnStorage();
     jugando = false;
     reproduciendoSecuencia= false;
     nivelJugador = 1;
@@ -274,6 +275,12 @@ var comenzarJuego = function () {
     start.classList.add("displayNone");
 }
 
+var guardarEnStorage = function () {
+    var fecha = new Date().toLocaleDateString(); //hace que la fecha tenga un formato legible
+    var resultados = [nombreJugador, puntajeFinalJugador, puntajeJugador, nivelJugador, fecha]; //puntaje jugador representa los botones presionados
+    localStorage.setItem("resultados",JSON.stringify(resultados));
+  }
+
 //MANEJO DE EVENTOS
 botones.forEach(function(i){
     i.addEventListener("mousedown", pintar);
@@ -286,7 +293,4 @@ start.addEventListener("click", comenzarJuego);
 start.addEventListener("click", sonidoClickPlay);
 sumbitNombreJugador.addEventListener("click", guardarNombreJugador);
 modalNombreJugadorFunction();
-  
-
-
-
+contactanos.addEventListener("click", sonidoClickPlay);
