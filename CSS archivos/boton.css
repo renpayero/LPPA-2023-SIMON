@@ -1,56 +1,56 @@
 .btn {
-    border: none;
-    color: #ffffff;
-    background-image: linear-gradient(30deg, #0400ff, #088be3);
-    border-radius: 1rem;
-    background-size: 100% auto;
-    font-family: inherit;
-    font-size: 1vw;
-    padding: 0.6vw 1.5vw;
-    text-decoration: none;
-   }
+  border: none;
+  color: #ffffff;
+  background-image: linear-gradient(30deg, #0400ff, #088be3);
+  border-radius: 1rem;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 1vw;
+  padding: 0.6vw 1.5vw;
+  text-decoration: none;
+}
 
 .btn:hover {
-    background-position: right center;
-    background-size: 200% auto;
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse512 1.5s infinite;
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
 }
-   
+
 @keyframes pulse512 {
-0% {
-     box-shadow: 0 0 0 0 #05bada66;
-}
-   
-70% {
-     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
-}
-   
-100% {
-     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
-}
+  0% {
+    box-shadow: 0 0 0 0 #05bada66;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
 }
 
 /* mediaquery para acomodar el responsive cuando el juego comienza a verse mas pequeño */
 @media screen and (max-width: 1250px) {
-     .btn {
-          font-size: 1.5vw;
-          padding: 1vw 2.3vw;
-         }
+  .btn {
+    font-size: 1.5vw;
+    padding: 1vw 2.3vw;
+  }
 }
 
 /* media query para tablet */
 @media screen and (max-width: 768px) {
-     .btn {
-          font-size: 2.5vw;
-          padding: 1.6vw 3.5vw;
-     }
+  .btn {
+    font-size: 2.5vw;
+    padding: 1.6vw 3.5vw;
+  }
 }
 
 /* media query para mobile */
 @media screen and (max-width: 515px) {
-     .btn {
-          font-size: 4vw;
-          padding: 2.5vw 5vw;
-     }
+  .btn {
+    font-size: 4vw;
+    padding: 2.5vw 5vw;
+  }
 }
