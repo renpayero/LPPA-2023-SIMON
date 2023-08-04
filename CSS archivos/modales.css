@@ -5,7 +5,7 @@
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     width: 30vw;
     height: 10vw;
     padding: 2vw;
@@ -41,7 +41,7 @@
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     width: 30vw;
     height: 10vw;
     padding: 2vw;
@@ -76,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    position: fixed;
+    position: absolute;
     width: 30vw;
     height: 10vw;
     padding: 2vw;
@@ -95,4 +95,204 @@
     font-weight: bold;
     color: white;
     -webkit-text-stroke: 1px black;
+}
+
+/* mediaquery para acomodar el responsive cuando el juego comienza a verse mas pequeño */
+@media screen and (max-width: 1250px) {
+    /* MODAL JUGADOR */
+.modalNombreJugador{
+    width: 42vw;
+    height: 14vw;
+    padding: 3vw;
+    border: 1px solid white;
+    border-radius: 1.5vw;
+}
+#labelNombre {
+    margin-bottom: 1.5vw;
+    font-size: 3.3vw;
+}  
+#nombreJugadorInput{
+    width: 25.5vw;
+    font-size: 1.5vw;
+}
+#spanNombreJugador{
+    font-size: 1.5vw;
+    padding-bottom: 1.5vw;
+}
+#sumbitNombreJugador{
+    width: 10vw;
+    font-size: 1.4vw;
+}
+
+/* MODAL JUEGO TERMINADO */
+.modalJuegoTerminado{
+    width: 42vw;
+    height: 14vw;
+    padding: 3vw;
+    border: 1px solid white;
+    border-radius: 1.5vw;
+}
+#labelJuegoTerminado{
+    margin-bottom: 1.5vw;
+    font-size: 3.3vw;
+}
+#continuar{
+    margin-top: 1.5vw;
+    width: 15vw;
+    height: 4.2vw;
+    font-size: 1.5vw;
+}
+.modalJuegoTerminado span{
+    font-size: 1.5vw;
+}
+.modalJuegoTerminado span span{
+    font-size: 1.5vw;
+}
+
+/* MODAL SIGUIENTE NIVEL */
+.modalSiguienteNivel{
+    width: 42vw;
+    height: 14vw;
+    padding: 3vw;
+    border: 1px solid white;
+    border-radius: 1.5vw;
+}
+#pSiguienteNivel{
+    font-size: 4vw;
+}
+}
+
+/* media query para tablet */
+@media screen and (max-width: 768px) {
+/* MODAL JUGADOR */
+.modalNombreJugador{
+    width: 63vw;
+    height: 22vw;
+    padding: 4.5vw;
+    border: 1px solid white;
+    border-radius: 2.5vw;
+}
+#labelNombre {
+    margin-bottom: 2.5vw;
+    font-size: 5vw;
+}  
+#nombreJugadorInput{
+    width: 38.5vw;
+    font-size: 2.5vw;
+}
+#spanNombreJugador{
+    font-size: 2.5vw;
+    padding-bottom: 2.5vw;
+}
+#sumbitNombreJugador{
+    width: 15vw;
+    height: 4vw;
+    font-size: 2.3vw;
+}
+
+/* MODAL JUEGO TERMINADO */
+.modalJuegoTerminado{
+    width: 63vw;
+    height: 22vw;
+    padding: 4.5vw;
+    border: 1px solid white;
+    border-radius: 2.5vw;
+}
+#labelJuegoTerminado{
+    margin-bottom: 2.5vw;
+    font-size: 6vw;
+}
+#continuar{
+    margin-top: 2.5vw;
+    width: 22vw;
+    height: 7vw;
+    font-size: 2.1vw;
+}
+.modalJuegoTerminado span{
+    font-size: 2.8vw;
+}
+.modalJuegoTerminado span span{
+    font-size: 2.8vw;
+}
+
+/* MODAL SIGUIENTE NIVEL */
+.modalSiguienteNivel{
+    width: 63vw;
+    height: 22vw;
+    padding: 4.5vw;
+    border: 1px solid white;
+    border-radius: 2.5vw;
+}
+#pSiguienteNivel{
+    font-size: 6vw;
+}
+}
+
+/* media query para mobile */
+@media screen and (max-width: 515px) {
+/* MODAL JUGADOR */
+.modalNombreJugador{
+    position: fixed;
+    width: 84vw;
+    height: 30vw;
+    padding: 6vw;
+    border: 1px solid white;
+    border-radius: 3.4vw;
+}
+#labelNombre {
+    margin-bottom: 3.4vw;
+    font-size: 7vw;
+}  
+#nombreJugadorInput{
+    width: 52vw;
+    font-size: 3.5vw;
+}
+#spanNombreJugador{
+    font-size: 3.5vw;
+    padding-bottom: 3.5vw;
+}
+#sumbitNombreJugador{
+    width: 20vw;
+    height: 5.5vw;
+    font-size: 3vw;
+}
+
+/* MODAL JUEGO TERMINADO */
+.modalJuegoTerminado{
+    position: fixed;
+    width: 84vw;
+    height: 30vw;
+    padding: 6vw;
+    border: 1px solid white;
+    border-radius: 3.4vw;
+}
+#labelJuegoTerminado{
+    margin-bottom: 3.4vw;
+    font-size: 7vw;
+}
+#continuar{
+    margin-top: 3.5vw;
+    width: 30vw;
+    height: 10vw;
+    font-size: 3vw;
+}
+.modalJuegoTerminado span{
+    font-size: 3.5vw;
+}
+.modalJuegoTerminado span span{
+    font-size: 3.5vw;
+}
+
+/* MODAL SIGUIENTE NIVEL */
+.modalSiguienteNivel{
+    position: fixed;
+    width: 84vw;
+    height: 30vw;
+    padding: 6vw;
+    border: 1px solid white;
+    border-radius: 3.4vw;
+}
+#pSiguienteNivel{
+    font-size: 8.5vw;
+}
 }
