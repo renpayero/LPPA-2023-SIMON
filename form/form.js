@@ -11,8 +11,8 @@ var validarFormulario = function (e) {
   switch (e.target.name) {
     case "nombre":
       document.getElementById("titulo-nombre").textContent =
-        "Hola " + e.target.value + "!";
-      if (expresiones.nombreCompletoRegex.test(e.target.value)) {
+        "Hello " + e.target.value + "!";
+      if (expresiones.nombreCompletoRegex.test(e.target.value.trim())) {
         //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
         document.getElementById("nombre-correcto").style.display = "flex";
         document.getElementById("nombre-incorrecto").style.display = "none";
@@ -26,7 +26,7 @@ var validarFormulario = function (e) {
       }
       break;
     case "email":
-      if (expresiones.emailRegex.test(e.target.value)) {
+      if (expresiones.emailRegex.test(e.target.value.trim())) {
         //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
         document.getElementById("email-correcto").style.display = "flex";
         document.getElementById("email-incorrecto").style.display = "none";
@@ -50,32 +50,13 @@ inputs.forEach(function (i) {
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
-  var nombreCompleto = document.getElementById("nombre").value;
-  var email = document.getElementById("email").value;
   var asunto = document.getElementById("asunto").value;
-  var mensaje = document.getElementById("mensaje").value;
-  
-  nombreCompletoRegex = /^(?=.*\s).{6,}$/;
-  emailRegex = /^\S+@\S+\.\S+$/;
+  var mensaje = document.getElementById("mensaje").value.trim();
+
   mensajeRegex = /^.{6,}$/;
 
-  if (!nombreCompletoRegex.test(nombreCompleto)) {
-    alert(
-      "El nombre completo es inválido, debe tener más de 6 letras y al menos un espacio entre medio."
-    );
-    return;
-  }
-
-  if (!emailRegex.test(email)) {
-    alert(
-      "El correo electrónico es inválido, debe tener un formato de email válido."
-    );
-    return;
-  }
-
   if (mensaje.length <= 6) {
-    alert("El mensaje debe contener almenos 6 caracteres."
-	);
+    alert("El mensaje debe contener almenos 6 caracteres.");
     return;
   }
   formulario.action = `mailto:renzopayero@hotmail.com?mail=joaksd@ojasdnl.com&subject=${asunto}&body=${mensaje}`;

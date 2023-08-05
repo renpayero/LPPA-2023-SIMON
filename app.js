@@ -27,7 +27,6 @@ var tiempoJugador = 30;
 var tiempoPorNivel = [];
 var puntajeFinalJugador = 0;
 
-
 //variables de los scripts
 var colores = ["verde", "rojo", "amarillo", "azul"];
 var reproduciendoSecuencia = false;
@@ -254,7 +253,6 @@ var modalNombreJugadorFunction = function () {
   displayNoneDiv.classList.remove("displayNone");
 };
 
-
 //valida el nombre del jugador y lo guarda en una variable
 var guardarNombreJugador = function () {
   sonidoClickPlay();
@@ -278,7 +276,6 @@ var comenzarJuego = function () {
   }, 1000);
   start.classList.add("displayNone");
 };
-
 
 var guardarEnStorage = function () {
   var fecha = new Date().toLocaleDateString(); //hace que la fecha tenga un formato legible
