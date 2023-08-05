@@ -258,7 +258,8 @@ var modalNombreJugadorFunction = function () {
 //valida el nombre del jugador y lo guarda en una variable
 var guardarNombreJugador = function () {
   sonidoClickPlay();
-  if (nombreJugadorInput.value.length >= 3) {
+  variablesSinEspacios = nombreJugadorInput.value.trim();
+  if (variablesSinEspacios.length >= 3) {
     nombreJugador = nombreJugadorInput.value;
     modalNombreJugador.classList.add("displayNone");
     displayNoneDiv.classList.add("displayNone");
