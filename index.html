@@ -2,24 +2,20 @@
 <html lang="en">
   <head>
     <!-- CARPETAS -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS archivos/normalize.css" />
-    <link rel="stylesheet" href="./CSS archivos/style.css" />
-    <link rel="stylesheet" href="./CSS archivos/boton.css" />
-    <link rel="stylesheet" href="./CSS archivos/modales.css" />
-    <link rel="stylesheet" href="./CSS archivos/agregados.css" />
-    <link rel="stylesheet" href="./CSS archivos/botonStart.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="icono.png" type="image/x-icon" />
-</head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./CSSarchivos/normalize.css" >
+    <link rel="stylesheet" href="./CSSarchivos/style.css" >
+    <link rel="stylesheet" href="./CSSarchivos/boton.css" >
+    <link rel="stylesheet" href="./CSSarchivos/modales.css" >
+    <link rel="stylesheet" href="./CSSarchivos/agregados.css" >
+    <link rel="stylesheet" href="./CSSarchivos/botonStart.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Russo+One&display=swap" >
+    <link rel="shortcut icon" href="icono.png" type="image/x-icon" >
     <title>Simon Dice</title>
   </head>
   <body>
@@ -44,20 +40,15 @@
       <button id="start">PLAY</button>
       <div class="modalNombreJugador displayNone" id="modalNombreJugador">
         <label for="nombreJugadorInput" id="labelNombre">Join nickname</label>
-        <input type="text" name="nombreJugador" id="nombreJugadorInput" />
+        <input type="text" name="nombreJugador" id="nombreJugadorInput">
         <span id="spanNombreJugador">*Must contain at least 3 characters</span>
-        <input type="submit" value="Save" id="sumbitNombreJugador" />
+        <input type="submit" value="Save" id="sumbitNombreJugador" >
       </div>
       <div class="modalJuegoTerminado displayNone" id="modalJuegoTerminado">
         <label for="continuar" id="labelJuegoTerminado">Game Over</label>
         <span>Final Score: <span id="spanPuntuacionFinal"></span></span>
         <span>Level: <span id="spanNivelFinal"></span></span>
-        <input
-          type="button"
-          value="Try again"
-          name="continuar"
-          id="continuar"
-        />
+        <input type="button" value="Try again" name="continuar" id="continuar">
       </div>
       <div class="modalSiguienteNivel displayNone" id="modalSiguienteNivel">
         <p id="pSiguienteNivel">Congratulations!</p>

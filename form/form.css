@@ -30,9 +30,9 @@ h2 {
 }
 
 .form-group {
-  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -58,7 +58,7 @@ h2 {
   color: #ffffff;
 }
 
-#mensaje {
+#message {
   flex-basis: 100%;
   padding: 8px;
   border: 1px solid #555555;

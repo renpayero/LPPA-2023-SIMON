@@ -50,8 +50,8 @@ inputs.forEach(function (i) {
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
-  var asunto = document.getElementById("asunto").value;
-  var mensaje = document.getElementById("mensaje").value.trim();
+  var asunto = document.getElementById("subject").value;
+  var mensaje = document.getElementById("message").value.trim();
 
   mensajeRegex = /^.{6,}$/;
 
