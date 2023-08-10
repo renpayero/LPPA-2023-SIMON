@@ -36,11 +36,11 @@ var tiempoUsado = 0;
 var jugando = false; //inicializa en false porque cuando cargamos la pagina no estamos jugando
 
 //sonidos
-var sonidoClick = new Audio("./sonidos/pip_sound.wav");
-var juegoTerminadoSound = new Audio("./sonidos/game_over_sound.wav");
-var siguienteNivel = new Audio("./sonidos/level_up_sound.wav");
-var popUp = new Audio("./sonidos/popup_sound.wav");
-var mostrarColor = new Audio("./sonidos/mostrar_color_sound.wav");
+var sonidoClick = new Audio("./sonidosJuego/pip_sound_game.wav");
+var juegoTerminadoSound = new Audio("./sonidosJuego/game_over_sound_game.wav");
+var siguienteNivel = new Audio("./sonidosJuego/level_up_sound_game.wav");
+var popUp = new Audio("./sonidosJuego/popup_sound_game.wav");
+var mostrarColor = new Audio("./sonidosJuego/mostrar_color_sound_game.wav");
 
 puntuacionSpan.textContent = puntajeJugador;
 nivelSpan.textContent = nivelJugador;
@@ -207,8 +207,7 @@ var iniciarTiempo = function () {
 };
 
 var calcularPuntajeFinal = function () {
-  tiempoPorNivel.forEach(function (valor, i) {
-    // puntajeFinalJugador += valor / puntajeJugador;
+  tiempoPorNivel.forEach(function (valor, i) { //aunque no uso el valor lo pongo igual porque necesito usar el indice
     tiempoUsado += 30 - tiempoPorNivel[i];
   });
   puntajeFinalJugador = puntajeJugador - tiempoUsado;
