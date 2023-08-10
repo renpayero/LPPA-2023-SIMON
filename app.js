@@ -36,11 +36,11 @@ var tiempoUsado = 0;
 var jugando = false; //inicializa en false porque cuando cargamos la pagina no estamos jugando
 
 //sonidos
-var sonidoClick = new Audio("./SONIDOS/PIP_SOUND.wav");
-var juegoTerminadoSound = new Audio("./SONIDOS/GAME_OVER_SOUND.wav");
-var siguienteNivel = new Audio("./SONIDOS/LEVEL_UP_SOUND.wav");
-var popUp = new Audio("./SONIDOS/POPUP_SOUND.wav");
-var mostrarColor = new Audio("./SONIDOS/MOSTRAR_COLOR.wav");
+var sonidoClick = new Audio("./sonidos/pip_sound.wav");
+var juegoTerminadoSound = new Audio("./sonidos/game_over_sound.wav");
+var siguienteNivel = new Audio("./sonidos/level_up_sound.wav");
+var popUp = new Audio("./sonidos/popup_sound.wav");
+var mostrarColor = new Audio("./sonidos/mostrar_color_sound.wav");
 
 puntuacionSpan.textContent = puntajeJugador;
 nivelSpan.textContent = nivelJugador;
