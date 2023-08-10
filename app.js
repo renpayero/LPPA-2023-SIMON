@@ -293,8 +293,8 @@ var guardarEnStorage = function () {
 botones.forEach(function (i) {
   i.addEventListener("mousedown", pintar);
   i.addEventListener("mouseup", despintar);
-  i.addEventListener("click", click); //feedback del click
-  i.addEventListener("click", sonidoClickPlay);
+  i.addEventListener("mouseup", click); //feedback del click
+  i.addEventListener("mouseup", sonidoClickPlay);
 });
 
 start.addEventListener("click", comenzarJuego);
