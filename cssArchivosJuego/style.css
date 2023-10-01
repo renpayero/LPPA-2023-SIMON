@@ -71,6 +71,12 @@ body {
   border-radius: 30%;
   cursor: pointer;
 }
+.logodakodev{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 11rem;
+}
 /* button{
     position: absolute; 
     width: 6vw;
